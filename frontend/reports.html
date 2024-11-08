@@ -28,11 +28,7 @@
         Chart
        </a>
       </li>
-      <li>
-       <a class="hover:underline" href="#">
-        Home
-       </a>
-      </li>
+      <li><a class="hover:underline" id="homeLink" href="#">Home</a></li>
      </ul>
     </nav>
    </div>
@@ -52,32 +48,32 @@
     </h2>
     <ul class="space-y-2">
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="report/masterListOfBooks.html">
        Master List of Books
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="report/masterListOfMovies.html">
        Master List of Movies
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="report/masterListOfMembership.html">
        Master List of Memberships
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="report/activeIssues.html">
        Active Issues
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="report/overdurReturns.html">
        Overdue Returns
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="report/issueRequests.html">
        Pending Issue Requests
       </a>
      </li>
@@ -126,6 +122,12 @@
                 }
             }
         });
+        
+        // Check if the user is an admin or a regular user
+        const isAdmin = true; // Change this value based on the logged-in user type
+
+        document.getElementById('homeLink').href = isAdmin ? 'adminhp.html' : 'userhp.html';
+  
   </script>
  </body>
 </html>

@@ -18,8 +18,8 @@
             <h1 class="text-2xl font-bold">Library Management</h1>
             <nav>
                 <ul class="flex space-x-4">
-                    <li><a class="hover:underline" href="#">Home</a></li>
-                    <li><a class="hover:underline" href="#">Log Out</a></li>
+                    <li><a class="hover:underline" id="homeLink" href="#">Home</a></li>
+                    <li><a class="hover:underline" href="logout.html">Log Out</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,8 +32,14 @@
     </main>
     <footer class="bg-blue-600 text-white p-4 mt-8">
         <div class="container mx-auto text-center">
-            <a class="hover:underline" href="#">Log Out</a>
+            <a class="hover:underline" href="logout.html">Log Out</a>
         </div>
     </footer>
+    <script>
+        // Check if the user is an admin or a regular user
+        const isAdmin = true; // Change this value based on the logged-in user type
+
+        document.getElementById('homeLink').href = isAdmin ? 'adminhp.html' : 'userhp.html';
+    </script>
 </body>
 </html>

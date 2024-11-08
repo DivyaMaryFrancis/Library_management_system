@@ -29,15 +29,11 @@
        </a>
       </li>
       <li>
-       <a class="hover:underline" href="#">
+       <a class="hover:underline" href="transaction.html">
         Transactions
        </a>
       </li>
-      <li>
-       <a class="hover:underline" href="#">
-        Home
-       </a>
-      </li>
+      <li><a class="hover:underline" id="homeLink" href="#">Home</a></li>
      </ul>
     </nav>
    </div>
@@ -52,22 +48,22 @@
     </div>
     <ul class="space-y-2">
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="bookavailable.html">
        Is book available?
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="bookissue.html">
        Issue book?
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="returnbook.html">
        Return book?
       </a>
      </li>
      <li>
-      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="payfine.html">
        Pay Fine?
       </a>
      </li>
@@ -147,10 +143,10 @@
       <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="remarks" placeholder="Enter any remarks (optional)"></textarea>
      </div>
      <div class="flex justify-end space-x-4">
-      <button class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700" type="button">
+      <button class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700" type="button" onclick="window.location.href='cancel.html'">
        Cancel
       </button>
-      <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" type="submit">
+      <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" type="button" onclick="window.location.href='Conformation.html'">
        Confirm
       </button>
      </div>
@@ -159,7 +155,7 @@
   </main>
   <footer class="bg-blue-600 text-white p-4 mt-8">
    <div class="container mx-auto text-center">
-    <a class="hover:underline" href="#">
+    <a class="hover:underline" href="logout.html">
      Log Out
     </a>
    </div>
@@ -199,6 +195,12 @@
                 }
             }
         });
+        
+        // Check if the user is an admin or a regular user
+        const isAdmin = true; // Change this value based on the logged-in user type
+
+        document.getElementById('homeLink').href = isAdmin ? 'adminhp.html' : 'userhp.html';
+
   </script>
  </body>
 </html>
