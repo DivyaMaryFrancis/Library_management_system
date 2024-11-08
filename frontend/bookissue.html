@@ -1,0 +1,182 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Book Issue - Library Management
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <header class="bg-blue-600 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">
+     Book Issue
+    </h1>
+    <nav>
+     <ul class="flex space-x-4">
+      <li>
+       <a class="hover:underline" href="#">
+        Chart
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Transactions
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Home
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto mt-8 flex">
+   <aside class="w-1/4 bg-white p-4 rounded shadow mr-4">
+    <h2 class="text-xl font-bold mb-4">
+     Chart
+    </h2>
+    <div class="mb-4">
+     <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    <ul class="space-y-2">
+     <li>
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+       Is book available?
+      </a>
+     </li>
+     <li>
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+       Issue book?
+      </a>
+     </li>
+     <li>
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+       Return book?
+      </a>
+     </li>
+     <li>
+      <a class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" href="#">
+       Pay Fine?
+      </a>
+     </li>
+    </ul>
+   </aside>
+   <section class="w-3/4">
+    <h2 class="text-xl font-bold mb-4">
+     Book Issue
+    </h2>
+    <form class="bg-white p-4 rounded shadow mb-4">
+     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="book-name">
+       Enter Book Name
+      </label>
+      <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="book-name">
+       <option>
+        Select Book
+       </option>
+       <option>
+        The Great Gatsby
+       </option>
+       <option>
+        To Kill a Mockingbird
+       </option>
+       <option>
+        1984
+       </option>
+       <option>
+        Pride and Prejudice
+       </option>
+      </select>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="author-name">
+       Enter Author
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="author-name" placeholder="Enter Author Name" type="text"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-date">
+       Issue Date
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="issue-date" type="date"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="return-date">
+       Return Date
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="return-date" type="date"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="remarks">
+       Remarks
+      </label>
+      <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="remarks" placeholder="Enter any remarks (optional)"></textarea>
+     </div>
+     <div class="flex justify-end space-x-4">
+      <button class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700" type="button">
+       Cancel
+      </button>
+      <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700" type="submit">
+       Confirm
+      </button>
+     </div>
+    </form>
+   </section>
+  </main>
+  <footer class="bg-blue-600 text-white p-4 mt-8">
+   <div class="container mx-auto text-center">
+    <a class="hover:underline" href="#">
+     Log Out
+    </a>
+   </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+   const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Science', 'Economics', 'Fiction', 'Children', 'Personal Development'],
+                datasets: [{
+                    label: '# of Books',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+  </script>
+ </body>
+</html>s
